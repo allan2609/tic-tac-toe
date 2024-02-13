@@ -60,6 +60,20 @@ const Gamecontroller = (function () {
     }
   }
 
+  function render() {
+    const container = document.querySelector(".container");
+
+    while (container.hasChildNodes()) {
+      container.removeChild(document.firstChild);
+    }
+ 
+    for (let i = 0; i < board.length; i++) {
+      const cell = document.createElement("div");
+      container.appendChild(cell);
+      cell.className = "cell";
+    }
+  }
+
   return { mark }; 
 
 })();
