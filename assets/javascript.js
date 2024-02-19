@@ -45,7 +45,16 @@ const Gamecontroller = (function () {
       marker = "O";
     }
     return marker;
-  } 
+  }
+
+  function getIndex() {
+    const container = document.querySelector(".container");
+    for (let i = 0; i < board.length; i++) {
+      container.children[i].onclick = function() {
+        mark(i);
+      }
+    }
+  }
  
   const board = Array(9);
   console.log(board);
@@ -54,7 +63,7 @@ const Gamecontroller = (function () {
     if (board[index] == undefined) {
       board.splice(index, 1, getMarker());
       checkWinConditions();
-      console.log(board);
+      render();
     } else {
     console.log("invalid move");
     }
@@ -71,9 +80,11 @@ const Gamecontroller = (function () {
       const cell = document.createElement("div");
       container.appendChild(cell);
       cell.className = "cell";
+      cell.textContent = board[i];
+      cell.addEventListener("click", getIndex);
     }
-  }
+  };
 
-  return { mark, render }; 
-
+  //return { mark }; 
+  render();
 })();
