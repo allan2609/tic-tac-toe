@@ -50,7 +50,7 @@ const Gamecontroller = (function () {
   function getIndex() {
     const container = document.querySelector(".container");
     for (let i = 0; i < board.length; i++) {
-      container.children[i].onclick = function() {
+      container.children[i].onclick = () => {
         mark(i);
       }
     }
