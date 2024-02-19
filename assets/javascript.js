@@ -64,7 +64,7 @@ const Gamecontroller = (function () {
     const container = document.querySelector(".container");
 
     while (container.hasChildNodes()) {
-      container.removeChild(document.firstChild);
+      container.removeChild(container.firstChild);
     }
  
     for (let i = 0; i < board.length; i++) {
@@ -74,6 +74,6 @@ const Gamecontroller = (function () {
     }
   }
 
-  return { mark }; 
+  return { mark, render }; 
 
 })();
