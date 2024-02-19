@@ -30,3 +30,19 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-width: 100vmin;
+    max-height: 100vmin;
+  }
+
+  .cell {
+    background-color: bisque;
+    aspect-ratio: 1;
+    min-width: 7rem;
+    min-height: 7rem;
+    border: 1px solid black;
+  }
