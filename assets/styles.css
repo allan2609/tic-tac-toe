@@ -40,9 +40,15 @@ html {
   }
 
   .cell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     background-color: bisque;
     aspect-ratio: 1;
     min-width: 7rem;
     min-height: 7rem;
     border: 1px solid black;
+    font-size: 28vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
