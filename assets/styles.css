@@ -31,24 +31,67 @@ html {
   box-sizing: inherit;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    max-width: 100vmin;
-    max-height: 100vmin;
-  }
+body {
+  background-color: #2e2e2e;
+}
 
-  .cell {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: bisque;
-    aspect-ratio: 1;
-    min-width: 7rem;
-    min-height: 7rem;
-    border: 1px solid black;
-    font-size: 28vmin;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vmin;
+  height: 100vmin;
+}
+
+.gamefield {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 80%;
+  height: 80%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  color: #f5f4f0;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.new, .reset {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  color: #f5f4f0;
+  font-size: 1.25rem;
+  visibility: hidden;
+  border: 1px solid #f5f4f0;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+}
+
+.new:hover, .reset:hover {
+  background-color: #454545;
+}
+
+.cell {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: bisque;
+  aspect-ratio: 1;
+  min-width: 7rem;
+  min-height: 7rem;
+  border: 1px solid black;
+  font-size: 20vmin;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
