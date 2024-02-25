@@ -23,16 +23,20 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
 body {
   background-color: #2e2e2e;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -93,5 +97,57 @@ body {
   min-height: 7rem;
   border: 1px solid black;
   font-size: 20vmin;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #2e2e2e;
+  color: #f5f4f0;
+  border: 0;
+}
+
+#dialog p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #f5f4f0;
+}
+
+.form-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.form-items span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+}
+
+#player-one-name, #player-two-name {
+  width: 60%;
+}
+
+input, label {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+
+input:focus {
+  outline: 3px solid blue;
+}
+
+.begin {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  background-color: #f5f4f0;
+  border-radius: 0.25rem;
+}
+
+.begin:hover {
+  background-color: lightgray;
 }
