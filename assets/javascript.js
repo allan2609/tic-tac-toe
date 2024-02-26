@@ -197,21 +197,22 @@ const Gamecontroller = (function () {
   
   const playerOneNameInput = document.querySelector("#player-one-name");
   const playerTwoNameInput = document.querySelector("#player-two-name");
+  playerOneNameInput.value = "Player X";
+  playerTwoNameInput.value = "Player O";
   const beginButton = document.querySelector(".begin");
+  beginButton.addEventListener("click", getNames);
   
   let playerOneName;
   let playerTwoName;
   
-  const getNames = (function() {
-    playerOneNameInput.value = "Player X";
-    playerTwoNameInput.value = "Player O";
-    dialog.showModal();
-    beginButton.addEventListener("click", () => {
-      playerOneName = playerOneNameInput.value;
-      playerTwoName = playerTwoNameInput.value;
-      dialog.close();
-    });
-  })();
+  function getNames() {
+    playerOneName = playerOneNameInput.value;
+    playerTwoName = playerTwoNameInput.value;
+    players[0].name = playerOneName;
+    players[1].name = playerTwoName;
+    dialog.close();
+  };
 
   render();
+  dialog.showModal();
 })();
