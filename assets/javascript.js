@@ -159,13 +159,11 @@ const Gamecontroller = (function () {
     if (winner != undefined) {
       newButton.style.visibility = "visible";
       resetButton.style.visibility = "visible";
-      console.log("announcing winner");
       playerOneInfo.textContent = (players[0].name + "'s score: " + players[0].score);
       playerTwoInfo.textContent = (players[1].name + "'s score: " + players[1].score);
     } else if (winner == undefined) {
       newButton.style.visibility = "visible";
       resetButton.style.visibility = "visible";
-      console.log("game knows it's a tie");
     }
     winner = undefined;
   }
