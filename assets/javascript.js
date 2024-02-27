@@ -19,7 +19,7 @@ const Gamecontroller = (function () {
     new Player("Player O", "O"),
   ];
 
-  let currentPlayer = players[1];
+  let currentPlayer;
 
   function getCurrentPlayer() {
     currentPlayer != players[0] ? currentPlayer = players[0] : currentPlayer = players[1];
@@ -52,13 +52,7 @@ const Gamecontroller = (function () {
         board.splice(index, 1, getCurrentPlayer().marker);
         render();
         checkWinConditions();
-        return;
-      } else {
-        console.log("invalid move");
-      }
-    }
-    if (!gameStatus.active) {
-      console.log("clicked after end of game");
+      } 
     }
   }
   
