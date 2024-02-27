@@ -112,15 +112,13 @@ const Gamecontroller = (function () {
   }
 
   function announceWinner() {
-    const playerOneInfo = document.querySelector(".player-one");
-    const playerTwoInfo = document.querySelector(".player-two");
     const newButton = document.querySelector(".new");
     const resetButton = document.querySelector(".reset");
     if (winner != undefined) {
       newButton.style.visibility = "visible";
       resetButton.style.visibility = "visible";
-      playerOneInfo.textContent = (players[0].name + "'s score: " + players[0].score);
-      playerTwoInfo.textContent = (players[1].name + "'s score: " + players[1].score);
+      document.querySelector(".player-one").textContent = (players[0].name + "'s score: " + players[0].score);
+      document.querySelector(".player-two").textContent = (players[1].name + "'s score: " + players[1].score);
     } else if (winner == undefined) {
       newButton.style.visibility = "visible";
       resetButton.style.visibility = "visible";
@@ -144,13 +142,11 @@ const Gamecontroller = (function () {
   document.querySelector(".reset").addEventListener("click", resetGame);
   
   function resetGame() {
-    const playerOneInfo = document.querySelector(".player-one");
-    const playerTwoInfo = document.querySelector(".player-two");
     startNewRound();
     players[0].score = 0;
     players[1].score = 0;
-    playerOneInfo.textContent = "";
-    playerTwoInfo.textContent = "";
+    document.querySelector(".player-one").textContent = "";
+    document.querySelector(".player-two").textContent = "";
   }
   
   const playerOneNameInput = document.querySelector("#player-one-name");
