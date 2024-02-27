@@ -19,7 +19,7 @@ const Gamecontroller = (function () {
     new Player("Player O", "O"),
   ];
 
-  let currentPlayer;
+  let currentPlayer = players[1];
 
   function getCurrentPlayer() {
     currentPlayer != players[0] ? currentPlayer = players[0] : currentPlayer = players[1];
@@ -65,82 +65,42 @@ const Gamecontroller = (function () {
   let winner;
 
   function checkWinConditions() {
-    if (board[0] === "X" && board[1] === "X" && board[2] === "X") {
+    if (board[0] == currentPlayer.marker && board[1] == currentPlayer.marker && board[2] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[3] === "X" && board[4] === "X" && board[5] === "X") {
+    } else if (board[3] == currentPlayer.marker && board[4] == currentPlayer.marker && board[5] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[6] === "X" && board[7] === "X" && board[8] === "X") {
+    } else if (board[6] == currentPlayer.marker && board[7] == currentPlayer.marker && board[8] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[0] === "X" && board[3] === "X" && board[6] === "X") {
+    } else if (board[0] == currentPlayer.marker && board[3] == currentPlayer.marker && board[6] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[1] === "X" && board[4] === "X" && board[7] === "X") {
+    } else if (board[1] == currentPlayer.marker && board[4] == currentPlayer.marker && board[7] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[2] === "X" && board[5] === "X" && board[8] === "X") {
+    } else if (board[2] == currentPlayer.marker && board[5] == currentPlayer.marker && board[8] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[0] === "X" && board[4] === "X" && board[8] === "X") {
+    } else if (board[0] == currentPlayer.marker && board[4] == currentPlayer.marker && board[8] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
       announceWinner();
-    } else if (board[2] === "X" && board[4] === "X" && board[6] === "X") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[0] === "O" && board[1] === "O" && board[2] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[3] === "O" && board[4] === "O" && board[5] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[6] === "O" && board[7] === "O" && board[8] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[0] === "O" && board[3] === "O" && board[6] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[1] === "O" && board[4] === "O" && board[7] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[2] === "O" && board[5] === "O" && board[8] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[0] === "O" && board[4] === "O" && board[8] === "O") {
-      gameStatus.toggleStatus();
-      currentPlayer.score++;
-      winner = currentPlayer;
-      announceWinner();
-    } else if (board[2] === "O" && board[4] === "O" && board[6] === "O") {
+    } else if (board[2] == currentPlayer.marker && board[4] == currentPlayer.marker && board[6] == currentPlayer.marker) {
       gameStatus.toggleStatus();
       currentPlayer.score++;
       winner = currentPlayer;
